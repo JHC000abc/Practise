@@ -1,9 +1,10 @@
+import pandas as pd
 import numpy as np
 from scipy import stats
 import pandas as pd
 from collections import Counter
 import matplotlib.pyplot as plt
-
+from scipy import stats
 
 '''
 https://www.cjavapy.com/article/1146/
@@ -59,7 +60,61 @@ plt.hist(data2,100)
 x = np.random.randint(1,10,100)
 y = np.random.randint(1,10001,100)
 plt.scatter(x,y)
-plt.show()
+# plt.show()
 
-# 回归
+# 回归 scipy r为相关关系，范围是0（没关系）到1（100%相关）
+x = [1,2,3,4,5,6,7,8,9,10]
+y = [20,30,40,50,60,70,80,90,100,110]
+slope,intercept,r,p,std_err = stats.linregress(x,y)
+def myfun(x):
+    return slope * x + intercept
+mymodel = list(map(myfun,x))
+# 散点
+plt.scatter(x,y)
+# 线性回归线
+plt.plot(x,mymodel)
+# plt.show()
+print('r=',r)
+# 预测未来
+speed = myfun(100)
+print(speed)
+
+# 多项式回归
+x = [1,2,3,5,6,7,8,9,10,12,13,14,15,16,18,19,21,22]
+y = [100,90,80,60,60,55,60,65,70,70,75,76,78,79,90,99,99,100]
+mymodel2 = np.poly1d(np.polyfit(x,y,3))
+myline = np.linspace(1,22,100)
+# 画散点
+plt.scatter(x,y)
+# 画回归线
+plt.plot(myline,mymodel2(myline))
+# plt.show()
+print('mymodel2=',mymodel2)
+print('mymodel2(myline)=',mymodel2(myline))
+# 多项式回归拟合度计算(0.94 表示拟合度很好)
+from sklearn.metrics import r2_score
+print(r2_score(y,mymodel2(x)))
+# 预测未来
+speed = mymodel2(20)
+print(speed)
+
+# 多元回归
+df = pd.read_csv('./data/ok.csv')
+print(df)
+# 独立值
+X = df[['Weight','Volume']]
+print(X)
+# 相关值
+y = df['CO2']
+print(y)
+from sklearn import linear_model
+regr = linear_model.LinearRegression()
+# print(regr)
+regr.fit(X, y)
+print('regr.coef_=',regr.coef_)
+# 输出预测值
+predictedCO2 = regr.predict([[3300, 1300]])
+print(predictedCO2)
+
+# 数据归一化
 
