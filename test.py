@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import expend_label
+
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -30,7 +30,7 @@ class Ui_Form(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem1)
-        self.label = expend_label.ExpandLabel()
+        self.label = QtWidgets.QLabel(Form)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)

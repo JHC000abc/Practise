@@ -1,32 +1,37 @@
-from PyQt5.QtGui import QImage, QPixmap
-import cv2
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+
 from PyQt5.QtWidgets import *
 import sys
 import test,expend_label
+from Practise import untitled
 
 
-class Example(QWidget):
+class Example(QLabel):
     def __init__(self):
         super().__init__()
-        self.ui = test.Ui_Form()
+        self.ui = untitled.Ui_Form1()
         self.ui.setupUi(self)
-        self.ui.pushButton.clicked.connect(self.slot_pushbutton_clicked)
+        # self.ui.pushButton.clicked.connect(self.slot_pushbutton_clicked)
         self.click_signal = 0
 
 
-    def slot_pushbutton_clicked(self):
-        if self.click_signal == 0:
-            self.ui.pushButton.setText('缩小')
-            self.ui.label.mode = 1
-            self.click_signal = 1
+    # def slot_pushbutton_clicked(self):
+    #     if self.click_signal == 0:
+    #         self.ui.pushButton.setText('缩小')
+    #         self.ui.label.mode = 1
+    #         self.click_signal = 1
+    #
+    #     else:
+    #         self.ui.pushButton.setText('放大')
+    #         self.ui.label.mode = 0
+    #         self.click_signal = 0
 
-        else:
-            self.ui.pushButton.setText('放大')
-            self.ui.label.mode = 0
-            self.click_signal = 0
+    def enterEvent(self,a0):
+        print("123")
+        # return super().enterEvent(a0)
 
+    def leaveEvent(self,a0):
+        print("321")
+        # return super().leaveEvent(a0)
 
 
 if __name__ == '__main__':
