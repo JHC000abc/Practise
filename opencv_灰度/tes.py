@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+
 alpha = 0.3
 beta = 80
 img_path = r"./1022745_m_MC20210901-002_0.bmp"

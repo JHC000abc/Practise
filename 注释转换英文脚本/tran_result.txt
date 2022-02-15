@@ -1,0 +1,2 @@
+Sets the image display in the label
+Set the color

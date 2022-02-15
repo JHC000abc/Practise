@@ -56,11 +56,23 @@
 
 import json
 
-lis = {'birthday': '2021-12-12 12:12:12', 'canuse': 'True', 'email': '123@sadad.com', 'gender': '男', 'id': 1, 'idcard': '1232da1312313123', 'password': '', 'phone': '23131dsa23131', 'privilege': '00000000', 'relname': '掌门2', 'username': '', 'usertype': '维修员', 'workid': '132131313'}
-lis2 = {'birthday': '2021-12-12 12:12:12', 'canuse': 'True', 'email': '123@sadad.com', 'gender': '男', 'id': 1, 'idcard': '1232da1312313123', 'password': '', 'phone': '23131dsa23131', 'privilege': '00000000', 'relname': '掌门2', 'username': '', 'usertype': '维修员', 'workid': '111111'}
-print(type(lis2))
-date = [lis2,lis]
-print(date)
-data = json.dumps(date)
-print(data)
-print(type(data))
+# lis = {'birthday': '2021-12-12 12:12:12', 'canuse': 'True', 'email': '123@sadad.com', 'gender': '男', 'id': 1, 'idcard': '1232da1312313123', 'password': '', 'phone': '23131dsa23131', 'privilege': '00000000', 'relname': '掌门2', 'username': '', 'usertype': '维修员', 'workid': '132131313'}
+# lis2 = {'birthday': '2021-12-12 12:12:12', 'canuse': 'True', 'email': '123@sadad.com', 'gender': '男', 'id': 1, 'idcard': '1232da1312313123', 'password': '', 'phone': '23131dsa23131', 'privilege': '00000000', 'relname': '掌门2', 'username': '', 'usertype': '维修员', 'workid': '111111'}
+# print(type(lis2))
+# date = [lis2,lis]
+# print(date)
+# data = json.dumps(date)
+# print(data)
+# print(type(data))
+from datetime import datetime
+import time
+now_time = time.localtime()
+now_str = time.strftime("%Y-%m-%d %H:%M:%S", now_time)
+now_date = datetime.strptime(now_str, "%Y-%m-%d %H:%M:%S")
+
+
+
+
+print(now_date)
+
+

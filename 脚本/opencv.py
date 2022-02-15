@@ -5,7 +5,7 @@ import numpy as np
 
 alpha = 0.3
 beta = 80
-img_path = './img.png'
+img_path = 'img.png'
 img = cv.imread(img_path)
 img2 = cv.imread(img_path)
 

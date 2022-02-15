@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 alpha = 0.3
 beta = 80
-img_path = "7MeansDenoising/1_1.bmp"
+img_path = r"C:\Users\JHC\Desktop\paint_cv\Practise\opencv_灰度\1022745_m_MC20210901-002_0.bmp"
 img = cv2.imread(img_path)
 img2 = cv2.imread(img_path)
 def updateAlpha(x):

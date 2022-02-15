@@ -1,9 +1,8 @@
 import sys
 
-from PyQt5 import QtCore
 from PyQt5.QtWidgets import *
-from Practise.test import Ui_Form
-from Practise.expend_label import ExpandLabel
+from Practise import Ui_Form
+
 
 class EventFilterWindow(QWidget):
 

@@ -1,8 +1,7 @@
 
 from PyQt5.QtWidgets import *
 import sys
-import test,expend_label
-from Practise import untitled
+from Practise.脚本 import untitled
 
 
 class Example(QLabel):
